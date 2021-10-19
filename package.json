@@ -1,0 +1,20 @@
+{
+    "author": {
+        "name": ""
+    },
+    "description": "RecordTesting",
+    "main": "server.js",
+    "name": "record-testing",
+    "scripts": {
+        "test": "jest"
+    },
+    "version": "0.0.0",
+    "devDependencies": {
+        "jest": "^27.2.4",
+        "supertest": "^6.1.6"
+    },
+    "dependencies": {
+        "axios": "^0.22.0",
+        "cypress": "^8.5.0"
+    }
+}
