@@ -38,7 +38,7 @@ async function getStationsArray(url) {
 
     let array = [];
     for (i = 0; i < eof; i++) {
-        tmpStr = JSON.stringify(response.result.stations[i]);
+        tmpStr = JSON.stringify(response.data.result.stations[i]);
         array[i] = tmpStr.substring(tmpStr.indexOf('"title":'), tmpStr.lastIndexOf(',"tooltip"')).split('"title":').join('');
     }
 
@@ -67,7 +67,6 @@ async function assertStations(url) {
 // Tests
 describe ('Test-1: Stations are pageble, should recieve 200.', () => {
     test ('recive status of a GET method', () => {
-        //const input = urlGetStations;
         const output = statusOK;
 
         expect(getStationsStatus(urlGetStations)).resolves.toBe(output);
@@ -76,7 +75,6 @@ describe ('Test-1: Stations are pageble, should recieve 200.', () => {
 
 describe ('Test-2: Get number of stations, should be 80', () => {
     test ('get numeric number of a last station in JSON', () => {
-        //const input = urlGetStations;
         const output = 80;
 
         expect(getStationsNumber(urlGetStations)).resolves.toBe(output);
@@ -86,7 +84,6 @@ describe ('Test-2: Get number of stations, should be 80', () => {
 
 describe ('Test-3: Assert stations with expected result, should be true', () => {
     test ('assert parsed array with expected', () => {
-        //const input = urlGetStations;
         const output = true;
 
         expect(assertStations(urlGetStations)).resolves.toBe(output);
